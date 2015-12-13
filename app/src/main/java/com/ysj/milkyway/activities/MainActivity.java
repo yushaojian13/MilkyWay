@@ -2,9 +2,10 @@ package com.ysj.milkyway.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,8 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.ysj.log.L;
 import com.ysj.milkyway.R;
+import com.ysj.milkyway.fragments.GankFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -83,7 +87,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment fragment = fragmentManager.findFragmentById(R.id.main_layout);
+            if (fragment != null && fragment instanceof GankFragment) {
+                L.i("skip");
+            } else {
+                fragmentManager.beginTransaction().replace(R.id.main_layout,
+                        new GankFragment()).commit();
+            }
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
