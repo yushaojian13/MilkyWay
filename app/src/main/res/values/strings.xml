@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">MilkyWay</string>
 
+    <string name="author">Yu Shaojian</string>
+    <string name="email" translatable="false">yushaojian13@163.com</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
