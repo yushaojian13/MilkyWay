@@ -19,5 +19,5 @@ public class HelloJni {
      * with this application.
      */
     public native String stringFromJNI();
-    public native String stringFromCppJNI();
+    public static native String stringFromCppJNI();
 }

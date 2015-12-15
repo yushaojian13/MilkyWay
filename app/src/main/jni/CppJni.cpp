@@ -5,7 +5,10 @@
 #include "CppJni.h"
 #include <jni.h>
 
-extern "C"
+extern "C" {
+jstring
+        Java_com_ysj_milkyway_jni_HelloJni_stringFromCppJNI(JNIEnv * env, jobject obj);
+}
 
 jstring
 Java_com_ysj_milkyway_jni_HelloJni_stringFromCppJNI(JNIEnv * env, jobject obj)

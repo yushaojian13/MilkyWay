@@ -32,3 +32,4 @@ production/
 #extras/external_tagsoup/
 *.hprof
 .DS_Store
+**/obj/**
