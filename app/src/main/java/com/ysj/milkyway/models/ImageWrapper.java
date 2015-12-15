@@ -33,6 +33,18 @@ public class ImageWrapper {
         return new ImageWrapper(image);
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

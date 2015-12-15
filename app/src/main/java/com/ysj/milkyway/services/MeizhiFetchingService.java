@@ -51,7 +51,7 @@ import retrofit.Retrofit;
  * 数据抓取服务
  * <p>
  * 之所以用 {@link IntentService}，是因为可以在它的 {@link #onHandleIntent(Intent)} 里跑同步代码，系统会把
- * 它跑在后台线程中，切保证同一时间只有一个任务在跑。
+ * 它跑在后台线程中，且保证同一时间只有一个任务在跑。
  *
  * @author XiNGRZ
  */
@@ -63,7 +63,6 @@ public class MeizhiFetchingService extends IntentService implements ImageFetcher
     public static final String EXTRA_TRIGGER = "trigger";
 
     public static final String ACTION_FETCH_FORWARD = "me.xingrz.gankmeizhi.FETCH_FORWARD";
-
     public static final String ACTION_FETCH_BACKWARD = "me.xingrz.gankmeizhi.FETCH_BACKWARD";
 
     private static final String TAG = "MeizhiFetchingService";

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ysj.milkyway.R;
-import com.ysj.milkyway.models.Image;
+import com.ysj.milkyway.models.ImageWrapper;
 import com.ysj.milkyway.views.widgets.RatioImageView;
 
 import butterknife.Bind;
@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Yu Shaojian on 2015 12 14.
  */
-public class GankMeizhiAdapter extends ArrayRecyclerAdapter<Image, GankMeizhiAdapter.ViewHolder> {
+public class GankMeizhiAdapter extends ArrayRecyclerAdapter<ImageWrapper, GankMeizhiAdapter.ViewHolder> {
     private Context mContext;
 
     public GankMeizhiAdapter(Context mContext) {
@@ -34,7 +34,9 @@ public class GankMeizhiAdapter extends ArrayRecyclerAdapter<Image, GankMeizhiAda
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Image image = get(position);
+        ImageWrapper image = get(position);
+
+        holder.imageView.setOriginalSize(image.width, image.height);
 
         Glide.with(mContext)
                 .load(image.getUrl())
