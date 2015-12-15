@@ -11,11 +11,16 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
 }
 
@@ -32,5 +37,6 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'io.realm:realm-android:0.82.2'
     compile 'com.ysj.log:log:1.0.7'
 }
