@@ -21,6 +21,24 @@ model {
             proguardFiles.add(file('proguard-rules.txt'))
         }
     }
+
+    // jni is the default dir; config this if yours is in different directory
+    android.sources {
+        main {
+            jni {
+                source {
+                    srcDirs 'src/main/jni'
+                }
+            }
+        }
+    }
+
+    android.ndk {
+        moduleName = "NativeStudy"
+        cppFlags.add("-std=c++11")
+        ldLibs.addAll(["android", "EGL", "GLESv2", "dl", "log"])
+        stl     = "stlport_static"
+    }
 }
 
 dependencies {
