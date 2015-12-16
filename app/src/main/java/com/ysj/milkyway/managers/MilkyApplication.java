@@ -2,6 +2,8 @@ package com.ysj.milkyway.managers;
 
 import android.app.Application;
 
+import com.bumptech.glide.Glide;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 

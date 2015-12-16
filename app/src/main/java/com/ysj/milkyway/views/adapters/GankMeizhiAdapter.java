@@ -21,9 +21,14 @@ import butterknife.ButterKnife;
  */
 public class GankMeizhiAdapter extends ArrayRecyclerAdapter<ImageWrapper, GankMeizhiAdapter.ViewHolder> {
     private Context mContext;
+    private OnItemClickListener listener;
 
     public GankMeizhiAdapter(Context mContext) {
         this.mContext = mContext;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -46,13 +51,21 @@ public class GankMeizhiAdapter extends ArrayRecyclerAdapter<ImageWrapper, GankMe
         ViewCompat.setTransitionName(holder.imageView, image.getUrl());
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+     class ViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.iv_item)
         RatioImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick(v, getAdapterPosition());
+                }
+            });
         }
+    }
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
     }
 }

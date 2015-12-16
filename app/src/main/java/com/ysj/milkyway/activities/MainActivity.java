@@ -46,6 +46,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // TODO save & restore
+        navigationView.setCheckedItem(R.id.nav_camera);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = fragmentManager.findFragmentById(R.id.main_layout);
+        if (fragment != null && fragment instanceof GankFragment) {
+            L.i("skip");
+        } else {
+            fragmentManager.beginTransaction().replace(R.id.main_layout,
+                    new GankFragment()).commit();
+        }
     }
 
     @Override
@@ -87,14 +98,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            Fragment fragment = fragmentManager.findFragmentById(R.id.main_layout);
-            if (fragment != null && fragment instanceof GankFragment) {
-                L.i("skip");
-            } else {
-                fragmentManager.beginTransaction().replace(R.id.main_layout,
-                        new GankFragment()).commit();
-            }
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -106,6 +110,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
+
+        setTitle(item.getTitle());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
