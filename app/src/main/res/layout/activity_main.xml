@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- CoordinatorLayout帮助实现多种滚动效果 -->
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
+
+    <!-- TODO 需要在Toolbar下边 -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <!-- 通过app:theme改变title等文字和图标的颜色 -->
     <!-- 通过app:popupTheme改变下拉框文字和图标的颜色 -->
@@ -20,9 +26,12 @@
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:theme="@style/AppTheme.AppBarOverlay" />
 
-    <TextView
+    <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/app_name" />
-</RelativeLayout>
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/takeoff"
+        app:layout_anchor="@id/rv_demo"
+        app:layout_anchorGravity="bottom|right|end"
+        app:layout_behavior="com.ysj.milkyway.helpers.ScrollAwareFABBehavior" />
+</android.support.design.widget.CoordinatorLayout>
