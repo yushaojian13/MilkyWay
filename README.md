@@ -7,7 +7,22 @@
 4. 多加注释
 5. 每一次学习创建一个新分支
 
+
+##### 2015.12.17 - Java Basic
+
+* LocalBroadcastManager
+
+
+##### 2015.12.17 - Android Basic
+
+* Service(IntentService)
+
+
 ##### 2015.12.17 - Material Design
+** V4 Support Library **
+
+* LocalBroadcastManager
+
 ** V7 Support Library **
 
 * Toolbar
@@ -24,6 +39,7 @@
 	* AppBarLayout
 	* CollapsingToolbarLayout
 * PercentRelativeLayout
+
 
 ##### 2015.12.13 - Gank Meizhi
 
