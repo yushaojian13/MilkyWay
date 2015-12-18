@@ -6,25 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <!-- TODO 需要在Toolbar下边 -->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_demo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- 通过app:theme改变title等文字和图标的颜色 -->
+        <!-- 通过app:popupTheme改变下拉框文字和图标的颜色 -->
+        <!-- fitsSystemWindows属性是避免在沉浸式模式下避免标题栏伸到状态栏而加的 -->
+        <!-- 如果Toolbar包在其他控件里，fitsSystemWindows可能需要加在父控件里 -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/AppTheme.AppBarOverlay" />
 
-    <!-- 通过app:theme改变title等文字和图标的颜色 -->
-    <!-- 通过app:popupTheme改变下拉框文字和图标的颜色 -->
-    <!-- fitsSystemWindows属性是避免在沉浸式模式下避免标题栏伸到状态栏而加的 -->
-    <!-- 如果Toolbar包在其他控件里，fitsSystemWindows可能需要加在父控件里 -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:fitsSystemWindows="true"
-        android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:theme="@style/AppTheme.AppBarOverlay" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_demo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
