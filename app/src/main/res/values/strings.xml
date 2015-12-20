@@ -4,10 +4,7 @@
     <string name="author">Yu Shaojian</string>
     <string name="email" translatable="false">yushaojian13@163.com</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
+    <string name="more">More</string>
 
     <string name="gank">Gank Meizhi</string>
     <string name="youtube">YuTube</string>

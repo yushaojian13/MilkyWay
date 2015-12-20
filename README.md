@@ -26,7 +26,7 @@
 ** V7 Support Library **
 
 * Toolbar
-* RecylcerView
+* RecyclerView
 
 ** Design Support Library **
 
