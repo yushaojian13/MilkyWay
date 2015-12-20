@@ -1,16 +1,16 @@
-package com.ysj.milkyway.services;
-
-import java.lang.reflect.Field;
+package com.ysj.milkyway.views.widgets;
 
 import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.ysj.milkyway.R;
+import com.ysj.milkyway.managers.FloatWindowManager;
+
+import java.lang.reflect.Field;
 
 public class FloatWindowSmallView extends LinearLayout {
 
@@ -73,11 +73,9 @@ public class FloatWindowSmallView extends LinearLayout {
 		super(context);
 		windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		LayoutInflater.from(context).inflate(R.layout.float_window_small, this);
-		View view = findViewById(R.id.small_window_layout);
-		viewWidth = view.getLayoutParams().width;
-		viewHeight = view.getLayoutParams().height;
-		TextView percentView = (TextView) findViewById(R.id.percent);
-		percentView.setText(MyWindowManager.getUsedPercentValue(context));
+		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_show);
+		viewWidth = fab.getLayoutParams().width;
+		viewHeight = fab.getLayoutParams().height;
 	}
 
 	@Override
@@ -133,8 +131,8 @@ public class FloatWindowSmallView extends LinearLayout {
 	 * 打开大悬浮窗，同时关闭小悬浮窗。
 	 */
 	private void openBigWindow() {
-		MyWindowManager.createBigWindow(getContext());
-		MyWindowManager.removeSmallWindow(getContext());
+		FloatWindowManager.createBigWindow(getContext());
+		FloatWindowManager.removeSmallWindow(getContext());
 	}
 
 	/**

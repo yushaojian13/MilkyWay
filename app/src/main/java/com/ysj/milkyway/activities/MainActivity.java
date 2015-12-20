@@ -1,6 +1,5 @@
 package com.ysj.milkyway.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.ysj.milkyway.R;
-import com.ysj.milkyway.services.FloatWindowService;
+import com.ysj.milkyway.managers.FloatWindowManager;
 import com.ysj.milkyway.views.adapters.DemoAdapter;
 
 import butterknife.Bind;
@@ -42,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void startHack() {
         getApplicationContext().setTheme(R.style.AppTheme);
-        startService(new Intent(this, FloatWindowService.class));
+        if (!FloatWindowManager.isWindowShowing()) {
+            FloatWindowManager.createSmallWindow(getApplicationContext());
+        }
         finish();
     }
 }

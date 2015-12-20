@@ -1,8 +1,4 @@
-package com.ysj.milkyway.services;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+package com.ysj.milkyway.managers;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -10,11 +6,15 @@ import android.graphics.PixelFormat;
 import android.view.Gravity;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
-import android.widget.TextView;
 
-import com.ysj.milkyway.R;
+import com.ysj.milkyway.views.widgets.FloatWindowBigView;
+import com.ysj.milkyway.views.widgets.FloatWindowSmallView;
 
-public class MyWindowManager {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FloatWindowManager {
 
 	/**
 	 * 小悬浮窗View的实例
@@ -137,8 +137,6 @@ public class MyWindowManager {
 	 */
 	public static void updateUsedPercent(Context context) {
 		if (smallWindow != null) {
-			TextView percentView = (TextView) smallWindow.findViewById(R.id.percent);
-			percentView.setText(getUsedPercentValue(context));
 		}
 	}
 
