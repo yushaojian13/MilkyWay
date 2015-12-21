@@ -22,6 +22,7 @@
 ** V4 Support Library **
 
 * LocalBroadcastManager
+* ContextCompat
 
 ** V7 Support Library **
 
