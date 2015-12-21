@@ -23,6 +23,8 @@
 
     // TabLayout标签textAllCaps默认属性为true，会阻止ImageSpans渲染，从而无法实现图片标签
     <style name="Widget.Design.TabLayout.IconIndicator" parent="Widget.Design.TabLayout.NoIndicator">
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
         <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
     </style>
 

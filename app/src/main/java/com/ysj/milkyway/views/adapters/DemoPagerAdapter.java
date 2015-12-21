@@ -34,7 +34,7 @@ public class DemoPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // 文字标签
-        return tabTitles[position];
+//        return tabTitles[position];
 
         // 图片标签
 //        return ImageCharSequence.create(context, R.drawable.circle_p);
@@ -42,7 +42,8 @@ public class DemoPagerAdapter extends FragmentPagerAdapter {
         // 文字+图片标签
 //        return ImageCharSequence.create(context, R.drawable.circle_p, tabTitles[position]);
 
-//        return null;
+        // icon标签. see TabLayout.Tab.setIcon
+        return null;
     }
 
     // 使用自定义Tab
