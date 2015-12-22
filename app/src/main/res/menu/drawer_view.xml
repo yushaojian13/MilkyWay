@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_youtube"
+            android:icon="@android:drawable/ic_menu_camera"
+            android:title="@string/youtube" />
+        <item
+            android:id="@+id/nav_douban"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/douban" />
+    </group>
+
+    <item android:title="@string/app_name">
+        <menu>
+            <item
+                android:icon="@android:drawable/ic_menu_camera"
+                android:title="@string/youtube" />
+            <item
+                android:icon="@android:drawable/ic_menu_gallery"
+                android:title="@string/douban" />
+        </menu>
+    </item>
+
+    <item
+        android:title="@string/app_name"
+        app:actionLayout="@layout/action_view_switch" />
+</menu>

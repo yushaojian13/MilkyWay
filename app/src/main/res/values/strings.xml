@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MilkyWay</string>
+    <string name="app_name">MilkyWay Material</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="youtube">YouTube</string>
+    <string name="douban">Douban</string>
 </resources>
