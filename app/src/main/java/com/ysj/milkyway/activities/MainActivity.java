@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        updateTabs();
+//        updateTabs();
 
         viewPager.addOnPageChangeListener(this);
         fab.setOnClickListener(v -> Snackbar.make(v, R.string.app_name, Snackbar.LENGTH_SHORT).show());
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onPageSelected(int position) {
-        updateTabs();
+//        updateTabs();
     }
 
     @Override
