@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.view.View;
 
 import com.ysj.milkyway.fragments.DemoTabFragment;
+import com.ysj.milkyway.fragments.WidgetsFragment;
 
 /**
  * Created by Yu Shaojian on 2015 12 21.
@@ -23,6 +24,10 @@ public class DemoPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        if (position == tabTitles.length - 1) {
+            return new WidgetsFragment();
+        }
+
         return new DemoTabFragment();
     }
 
